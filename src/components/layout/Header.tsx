@@ -11,7 +11,6 @@ const HeaderSection = () => {
   const pathName = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const { planCount, saveCount } = useContext(context);
-  console.log(planCount, saveCount);
 
   const handelToggleMenu = (menuClicked: boolean) => {
     setMenuOpen(menuClicked);
