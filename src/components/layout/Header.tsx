@@ -11,6 +11,7 @@ const HeaderSection = () => {
   const pathName = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const { planCount, saveCount } = useContext(context);
+  console.log(planCount, saveCount);
 
   const handelToggleMenu = (menuClicked: boolean) => {
     setMenuOpen(menuClicked);
@@ -22,8 +23,8 @@ const HeaderSection = () => {
     "ml-2 inline-flex min-w-6 items-center justify-center rounded-full bg-[#C2F800] px-2 py-0.5 text-xs font-extrabold text-black";
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-xl">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-xl ">
+      <div className="mx-auto container px-4 sm:px-6 lg:px-8">
         {/* ================= MAIN NAVBAR ================= */}{" "}
         <div className="flex h-18 items-center justify-between">
           {/* ================= LOGO ================= */}{" "}

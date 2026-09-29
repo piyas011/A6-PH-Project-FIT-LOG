@@ -1,3 +1,5 @@
+"use client";
+
 import {
   createContext,
   Dispatch,
@@ -14,7 +16,7 @@ interface ContextType {
 }
 
 export const context = createContext({} as ContextType);
-const Provider = ({ children }: { children: ReactNode }) => {
+export const Provider = ({ children }: { children: ReactNode }) => {
   const [planCount, setPlanCount] = useState(0);
   const [saveCount, setSaveCount] = useState(0);
 
