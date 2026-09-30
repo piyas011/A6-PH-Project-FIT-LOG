@@ -1,5 +1,5 @@
-import SaveButton from "@/components/workout/SaveButton";
-import TodaysPlanButton from "@/components/workout/TodaysPlanButton";
+import TodaysPlanButton from "@/components/workout/plan/TodaysPlanButton";
+import SaveButton from "@/components/workout/save/SaveButton";
 import { IData } from "@/types/workoutDataType";
 import Image from "next/image";
 
@@ -7,7 +7,7 @@ const WorkoutDetailsPage = async ({ params }: { params: { Id: string } }) => {
   const { Id } = await params;
 
   const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${Id}`);
-  const data: IData = await res.json();
+  const workoutData: IData = await res.json();
   const {
     name,
     muscleGroups,
@@ -21,7 +21,7 @@ const WorkoutDetailsPage = async ({ params }: { params: { Id: string } }) => {
     difficulty,
     instructions,
     image,
-  } = data;
+  } = workoutData;
 
   return (
     <div className="container mx-auto mt-20 grid grid-cols-1 gap-8 px-4 sm:px-6 lg:mt-30 lg:grid-cols-2 lg:items-stretch lg:px-0 pb-10">
@@ -140,11 +140,11 @@ const WorkoutDetailsPage = async ({ params }: { params: { Id: string } }) => {
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <div>
-              <TodaysPlanButton />
+              <TodaysPlanButton workoutData={workoutData} />
             </div>
 
             <div>
-              <SaveButton />
+              <SaveButton workoutData={workoutData} />
             </div>
           </div>
         </div>

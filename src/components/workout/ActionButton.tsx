@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { context } from "@/context/contextProvider";
+import { useContext } from "react";
 
 const ActionButton = () => {
-  const [activeTab, setActiveTab] = useState<"plan" | "save">("plan");
+  // const [activeTab, setActiveTab] = useState<"plan" | "save">("plan");
+  const { activeTab, setActiveTab } = useContext(context);
 
   const handelButtonClick = (active: "plan" | "save") => {
     setActiveTab(active);

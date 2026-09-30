@@ -1,5 +1,6 @@
 "use client";
 
+import { IData } from "@/types/workoutDataType";
 import {
   createContext,
   Dispatch,
@@ -9,18 +10,44 @@ import {
 } from "react";
 
 interface ContextType {
+  plan: IData[];
+  setPlan: Dispatch<SetStateAction<IData[]>>;
+
+  save: IData[];
+  setSave: Dispatch<SetStateAction<IData[]>>;
+
   planCount: number;
   setPlanCount: Dispatch<SetStateAction<number>>;
+
   saveCount: number;
   setSaveCount: Dispatch<SetStateAction<number>>;
+
+  exercises: number;
+  setExercises: Dispatch<SetStateAction<number>>;
+
+  minutes: number;
+  setMinutes: Dispatch<SetStateAction<number>>;
+
+  calories: number;
+  setCalories: Dispatch<SetStateAction<number>>;
+
+  saveExercises: number;
+  setSaveExercises: Dispatch<SetStateAction<number>>;
+
+  saveMinutes: number;
+  setSaveMinutes: Dispatch<SetStateAction<number>>;
+
+  saveCalories: number;
+  setSaveCalories: Dispatch<SetStateAction<number>>;
+
   activeTab: "plan" | "save";
   setActiveTab: Dispatch<SetStateAction<"plan" | "save">>;
 }
 
 export const context = createContext({} as ContextType);
 export const Provider = ({ children }: { children: ReactNode }) => {
-  const [plan, setPlan] = useState([]);
-  const [save, setSave] = useState([]);
+  const [plan, setPlan] = useState<IData[]>([]);
+  const [save, setSave] = useState<IData[]>([]);
   const [planCount, setPlanCount] = useState(0);
   const [saveCount, setSaveCount] = useState(0);
   const [exercises, setExercises] = useState(0);
