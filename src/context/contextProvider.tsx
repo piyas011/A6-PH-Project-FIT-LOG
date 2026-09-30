@@ -13,6 +13,8 @@ interface ContextType {
   setPlanCount: Dispatch<SetStateAction<number>>;
   saveCount: number;
   setSaveCount: Dispatch<SetStateAction<number>>;
+  activeTab: "plan" | "save";
+  setActiveTab: Dispatch<SetStateAction<"plan" | "save">>;
 }
 
 export const context = createContext({} as ContextType);
@@ -24,12 +26,10 @@ export const Provider = ({ children }: { children: ReactNode }) => {
   const [exercises, setExercises] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [calories, setCalories] = useState(0);
-  // /////////////////////
   const [saveExercises, setSaveExercises] = useState(0);
   const [saveMinutes, setSaveMinutes] = useState(0);
   const [saveCalories, setSaveCalories] = useState(0);
-  // /////////////////////
-  const [activeTab, setActiveTab] = useState<"tody" | "save">("tody");
+  const [activeTab, setActiveTab] = useState<"plan" | "save">("plan");
 
   const dataShared = {
     plan,

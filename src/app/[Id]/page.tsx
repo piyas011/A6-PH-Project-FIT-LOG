@@ -115,7 +115,7 @@ const WorkoutDetailsPage = async ({ params }: { params: { Id: string } }) => {
             {/* Rating */}
             <div className="flex items-center justify-between gap-4">
               <p className="font-medium">RATING</p>
-              <p className="text-[#C2F800]">{rating}</p>
+              <p className="text-white">{rating}</p>
             </div>
           </div>
 
