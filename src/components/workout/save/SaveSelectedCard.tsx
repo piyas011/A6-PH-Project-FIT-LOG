@@ -7,6 +7,7 @@ import { MdOutlineAccessTime } from "react-icons/md";
 import Link from "next/link";
 import { IoMdClose } from "react-icons/io";
 import { FaFire, FaRegStar } from "react-icons/fa6";
+import HandelSaveRemoveItem from "../HandelSaveRemoveItem";
 
 const SaveSelectedCard = () => {
   const { save } = useContext(context);
@@ -62,9 +63,7 @@ const SaveSelectedCard = () => {
                   >
                     View Details
                   </Link>
-                  <button className=" flex h-10 w-full items-center justify-center rounded-lg border border-red-500/20 text-gray-400 transition-all duration-300 hover:border-red-500/50 hover:bg-red-500/10 hover:text-red-400 sm:w-10 ">
-                    <IoMdClose />
-                  </button>
+                  <HandelSaveRemoveItem />
                 </div>
               </div>
             </div>

@@ -3,10 +3,10 @@ import { useContext } from "react";
 import Empty from "../EmptyWorkout";
 import Image from "next/image";
 import { MdOutlineAccessTime } from "react-icons/md";
-import { FaCheck, FaFire, FaRegStar } from "react-icons/fa6";
-import { IoMdClose } from "react-icons/io";
+import { FaFire, FaRegStar } from "react-icons/fa6";
 import Link from "next/link";
-import MarkAsDoneButton from "../MarkAsDoneButton";
+import MarkAsDoneButton from "../save/MarkAsDoneButton";
+import HandelRemoveItem from "../HandelPlanRemoveItem";
 
 const PlanSelectedCard = () => {
   const { plan } = useContext(context);
@@ -65,9 +65,7 @@ const PlanSelectedCard = () => {
                     View Details
                   </Link>
                   <MarkAsDoneButton item={item} />
-                  <button className=" flex h-10 w-full items-center justify-center rounded-lg border border-red-500/20 text-gray-400 transition-all duration-300 hover:border-red-500/50 hover:bg-red-500/10 hover:text-red-400 sm:w-10 ">
-                    <IoMdClose />
-                  </button>
+                  <HandelRemoveItem item={item} />
                 </div>
               </div>
             </div>

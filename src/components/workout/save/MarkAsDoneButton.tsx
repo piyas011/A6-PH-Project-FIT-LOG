@@ -6,10 +6,25 @@ import { FaCheck } from "react-icons/fa6";
 import { toast } from "react-toastify";
 
 const MarkAsDoneButton = ({ item }: { item: IData }) => {
-  const { setPlan } = useContext(context);
+  const {
+    setPlanCount,
+    planCount,
+    setPlan,
+    setExercises,
+    exercises,
+    setMinutes,
+    minutes,
+    setCalories,
+    calories,
+  } = useContext(context);
 
   const handleRemoveItem = () => {
     setPlan((res) => res.filter((planItem) => planItem.id !== item.id));
+    setPlanCount(planCount - 1);
+    setExercises(exercises - 1);
+    setMinutes(minutes - item.duration);
+    setCalories(calories - item.caloriesBurned);
+
     toast.success("Workout logged");
   };
 
