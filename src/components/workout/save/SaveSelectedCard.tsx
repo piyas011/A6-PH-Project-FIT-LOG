@@ -63,7 +63,7 @@ const SaveSelectedCard = () => {
                   >
                     View Details
                   </Link>
-                  <HandelSaveRemoveItem />
+                  <HandelSaveRemoveItem item={item} />
                 </div>
               </div>
             </div>
