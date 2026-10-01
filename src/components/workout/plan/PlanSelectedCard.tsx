@@ -6,6 +6,7 @@ import { MdOutlineAccessTime } from "react-icons/md";
 import { FaCheck, FaFire, FaRegStar } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import Link from "next/link";
+import MarkAsDoneButton from "../MarkAsDoneButton";
 
 const PlanSelectedCard = () => {
   const { plan } = useContext(context);
@@ -63,9 +64,7 @@ const PlanSelectedCard = () => {
                   >
                     View Details
                   </Link>
-                  <button className=" flex w-full items-center justify-center gap-2 rounded-lg bg-[#C2F800] px-4 py-2.5 text-sm font-bold text-black transition-all duration-300 hover:bg-[#d4ff33] hover:scale-[1.02] sm:w-auto ">
-                    <FaCheck /> Mark as Done
-                  </button>
+                  <MarkAsDoneButton item={item} />
                   <button className=" flex h-10 w-full items-center justify-center rounded-lg border border-red-500/20 text-gray-400 transition-all duration-300 hover:border-red-500/50 hover:bg-red-500/10 hover:text-red-400 sm:w-10 ">
                     <IoMdClose />
                   </button>
