@@ -5,7 +5,6 @@ import Image from "next/image";
 import { MdOutlineAccessTime } from "react-icons/md";
 
 import Link from "next/link";
-import { IoMdClose } from "react-icons/io";
 import { FaFire, FaRegStar } from "react-icons/fa6";
 import HandelSaveRemoveItem from "../HandelSaveRemoveItem";
 
